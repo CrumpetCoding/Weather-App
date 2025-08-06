@@ -48,33 +48,32 @@ function displayWeatherInfo(data){
     card.style.display = "flex";
 
     const locationDisplay = document.createElement("h1");
+    const weatherSymbol = document.createElement("p");
     const tempDisplay = document.createElement("p");
     const feelsLike = document.createElement("p");
     const humidityDisplay = document.createElement("p");
     const descDisplay = document.createElement("p");
-    const weatherSymbol = document.createElement("p");
 
     locationDisplay.textContent = `${location}, ${country}`;
+    weatherSymbol.textContent = getWeatherSymbol(id);
     tempDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
     feelsLike.textContent = `Feels like: ${(feels_like - 273.15).toFixed(1)}°C`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
     descDisplay.textContent = description;
-    weatherSymbol.textContent = getWeatherSymbol(id);
-
 
     locationDisplay.classList.add("locationDisplay");
+    weatherSymbol.classList.add("weatherSymbol");
     tempDisplay.classList.add("tempDisplay");
     feelsLike.classList.add("feelsLike");
     humidityDisplay.classList.add("humidityDisplay");
     descDisplay.classList.add("descDisplay");
-    weatherSymbol.classList.add("weatherSymbol");
 
     card.appendChild(locationDisplay);
+    card.appendChild(weatherSymbol);
     card.appendChild(tempDisplay);
     card.appendChild(feelsLike);
     card.appendChild(humidityDisplay);
     card.appendChild(descDisplay);
-    card.appendChild(weatherSymbol);
 
     console.log(data);
 

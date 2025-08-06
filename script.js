@@ -41,6 +41,7 @@ async function getWeatherData(location){
 function displayWeatherInfo(data){
     const {name: location, 
         main: {temp, feels_like, humidity},
+        sys: {country},
         weather: [{description, id}]} = data;
 
     card.textContent = "";
@@ -53,7 +54,7 @@ function displayWeatherInfo(data){
     const descDisplay = document.createElement("p");
     const weatherSymbol = document.createElement("p");
 
-    locationDisplay.textContent = location;
+    locationDisplay.textContent = `${location}, ${country}`;
     tempDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
     feelsLike.textContent = `Feels like: ${(feels_like - 273.15).toFixed(1)}°C`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;

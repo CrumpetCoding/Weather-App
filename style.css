@@ -15,7 +15,7 @@ body {
     padding: 10px;
     font-size: 2rem;
     font-weight: bold;
-    border: 2px solid rgba(0, 0, 0, 0.292);
+    border: none;
     color: #004953;
     border-radius: 10px;
     margin: 10px;
@@ -71,7 +71,7 @@ p {
 .humidityDisplay, .feelsLike {
     font-weight: bold;
     margin-bottom: 25px;
-    font-size: small;
+    font-size: medium;
 }
 
 .descDisplay {
